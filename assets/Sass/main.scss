@@ -1,0 +1,21 @@
+@use 'variables';
+@use 'header';
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(20, 20, 20);
+    /* background-color: variables.$fondo-body; */
+    padding: 0.5rem 2rem;
+    color: whitesmoke;
+    font-family: variables.$font-principal;
+}
+.main {
+    &__contenedor {
+        background-color: variables.$fondo;
+        padding: variables.$padding-general;
+        border-radius: 5px;
+    }
+    &__title {
+        color: variables.$primario;
+    }
+}

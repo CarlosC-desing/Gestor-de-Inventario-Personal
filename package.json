@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sass": "sass --watch assets/Sass/main.scss:assets/Css/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/CarlosC-desing/Gestor-de-Inventario-Personal/issues"
   },
-  "homepage": "https://github.com/CarlosC-desing/Gestor-de-Inventario-Personal#readme"
+  "homepage": "https://github.com/CarlosC-desing/Gestor-de-Inventario-Personal#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.95.1"
+  }
 }
