@@ -1,0 +1,52 @@
+@use 'variables';
+
+.main__formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario {
+    &__title {
+        color: variables.$primario;
+    }
+    &__label {
+        color: variables.$primario;
+    }
+
+    &__input {
+        height: 35px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+        &:focus {
+            border-color: variables.$primario;
+            outline: none;
+            box-shadow:
+                0 0 5px rgba(1, 5, 209, 0.733), 0 0 10px #2697f1;
+        }
+    }
+
+    &__select {
+        height: 35px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+        &:focus {
+            border-color: variables.$primario;
+            outline: none;
+            box-shadow:
+                0 0 5px rgba(1, 5, 209, 0.733), 0 0 10px #2697f1;
+        }
+    }
+
+    &__boton {
+        height: 35px;
+        width: 50%;
+        background: linear-gradient(variables.$primario, blue);
+        border-style: none;
+        border-radius: 5px;
+        color: whitesmoke;
+        font-weight: 700;
+        align-self: center;
+    }
+}

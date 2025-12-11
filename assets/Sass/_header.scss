@@ -1,51 +1,25 @@
 @use 'variables';
 .header {
     height: 20vh;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     &__brand {
-        width: 200px;
-    }
-    &__container {
-        display: flex;
-        align-items: center;
-        &--izq {
-            width: 40%;
-        }
-        &--der {
-            width: 60%;
-        }
-    }
-    &__title {
-        margin: 0.5rem 0;
-        color: variables.$primario;
+        width: 300px;
     }
     &__input {
+        margin-top: 25px;
+        height: 30px;
+        width: 50%;
         border-radius: 50px;
         border-style: none;
-        padding: 0 1rem;
-        height: 25px;
-        width: 50%;
+        padding: 0 10px;
+        font-weight: 700;
     }
-}
-.nav {
-    &__list {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        gap: 2rem;
-        list-style: none;
-    }
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: variables.$primario;
-        border-radius: 5px;
-        width: 25%;
-        height: 25px;
-    }
-    &__link {
-        color: whitesmoke;
-        text-decoration: none;
+    &__input:focus {
+        border-color: variables.$primario;
+        outline: none;
+        box-shadow: 
+        0 0 5px rgba(1, 5, 209, 0.733), 0 0 10px #2697f1;
     }
 }

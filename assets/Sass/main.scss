@@ -1,21 +1,63 @@
 @use 'variables';
 @use 'header';
+@use 'formulario';
+
 body {
     margin: 0;
     box-sizing: border-box;
     background-color: rgb(20, 20, 20);
-    /* background-color: variables.$fondo-body; */
     padding: 0.5rem 2rem;
     color: whitesmoke;
     font-family: variables.$font-principal;
 }
+
 .main {
-    &__contenedor {
+    display: grid;
+    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 1fr;
+    
+    grid-template-areas: 
+    "formulario formulario contenedor contenedor contenedor contenedor"
+    "tabla tabla tabla tabla tabla tabla";
+    
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+
+    &__formulariox {
         background-color: variables.$fondo;
+        grid-area: formulario;
         padding: variables.$padding-general;
         border-radius: 5px;
     }
-    &__title {
-        color: variables.$primario;
+    
+    &__contenedorx {
+        background-color: variables.$fondo;
+        grid-area: contenedor;
+        padding: variables.$padding-general;
+        border-radius: 5px;
+    }
+    
+    &__tablex {
+        background-color: variables.$fondo;
+        grid-area: tabla;
+        padding: variables.$padding-general;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        
+        grid-template-areas:
+            "formulario"
+            "contenedor"
+            "tabla";
+    }
+    
+    body {
+        padding: 0.5rem 1rem;
     }
 }
