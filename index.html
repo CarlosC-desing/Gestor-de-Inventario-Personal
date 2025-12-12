@@ -15,81 +15,86 @@
 </head>
 
 <body>
-    <header class="header">
-        <!-- <a href="index.html"> -->
-        <img class="header__brand" src="assets/img/Invento_logo.png" alt="Invento Labs logo">
-        <!-- </a> -->
-        <input class="header__input" type="text" name="buscador" id="buscador" placeholder="🔎 Buscar Producto...">
-    </header>
-    <main class="main">
-        <div class="main__formulariox">
-            <h2 class="formulario__title">Agrega un Producto</h2>
-            <form class="main__formulario" id="formulario">
-                <label class="formulario__label" for="nombre">Nombre:</label>
-                <input class="formulario__input" type="text" name="nombre" id="nombre" placeholder="nombre" required>
-                <label class="formulario__label" for="cantidadStock">Cantidad en Stock:</label>
-                <input class="formulario__input" type="number" name="cantidadStock" id="cantidadStock" placeholder="1"
-                    required>
-                <label class="formulario__label" for="precioUnitario">Precio Unitario:</label>
-                <input class="formulario__input" type="number" step="0.01" name="precioUnitario" id="precioUnitario" placeholder="12.11" required>
-                <label class="formulario__label" for="categoria">Categoría:</label>
-                <select class="formulario__select" name="categoria" id="categoria">
-                    <option class="select__option" value="todas">Todas</option>
-                    <option class="select__option" value="hogar">Hogar</option>
-                    <option class="select__option" value="mascotas">Mascotas</option>
-                    <option class="select__option" value="electronica">Electronica</option>
-                    <option class="select__option" value="alimentos">Alimentos</option>
-                    <option class="select__option" value="aseoPersonal">Aseo Personal</option>
-                    <option class="select__option" value="juguetes">Juguetes</option>
-                    <option class="select__option" value="ropa">Ropa</option>
-                </select>
-                <button class="formulario__boton" type="submit" id="btnAgregar">Agregar</button>
-            </form>
-        </div>
-        <div class="main__contenedorx">
-            <h2 class="main__title">Dashboard</h2>
-            <p class="main__paragraph">Total de productos: <span class="main__span" id="">0</span></p>
-            <p class="main__paragraph">Total de categorías: <span class="main__span" id="">0</span></p>
-            <p class="main__paragraph">Productos con bajo stock: <span class="main__span" id="">0</span></p>
-            <p class="main__paragraph">Valor total del inventario: <span class="main__span" id="">0</span></p>
-        </div>
-        <div class="main__tablex">
-            <table class="main__table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cantidad en Stock</th>
-                        <th>Categoría</th>
-                        <th>Precio Unitario</th>
-                        <th>Subtotal</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody"></tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4" style="text-align: end;">Subtotal General:</td>
-                        <td style="text-align: center;"><span id="subtotalgeneral">0</span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="text-align: end;">Iva(16%):</td>
-                        <td style="text-align: center;"><span id="iva">0</span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="text-align: end;">total:</td>
-                        <td style="text-align: center;"><span id="total">0</span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" style="text-align: end;">Valor Total del inventario:</td>
-                        <td style="text-align: center;"><span id="valorInventario">0</span></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </main>
-    <footer class="footer"></footer>
+    <div class="container__body--all">
+        <header class="header">
+            <!-- <a href="index.html"> -->
+            <img class="header__brand" src="assets/img/Invento_logo.png" alt="Invento Labs logo">
+            <!-- </a> -->
+            <input class="header__input" type="text" name="buscador" id="buscador" placeholder="🔎 Buscar Producto...">
+        </header>
+        <main class="main">
+            <div class="main__formulariox">
+                <h2 class="formulario__title">Agrega un Producto</h2>
+                <form class="main__formulario" id="formulario">
+                    <label class="formulario__label" for="nombre">Nombre:</label>
+                    <input class="formulario__input" type="text" name="nombre" id="nombre" placeholder="nombre"
+                        required>
+                    <label class="formulario__label" for="cantidadStock">Cantidad en Stock:</label>
+                    <input class="formulario__input" type="number" name="cantidadStock" id="cantidadStock"
+                        placeholder="1" required>
+                    <label class="formulario__label" for="precioUnitario">Precio Unitario:</label>
+                    <input class="formulario__input" type="number" step="0.01" name="precioUnitario" id="precioUnitario"
+                        placeholder="12.11" required>
+                    <label class="formulario__label" for="categoria">Categoría:</label>
+                    <select class="formulario__select" name="categoria" id="categoria">
+                        <option class="select__option" value="todas">Todas</option>
+                        <option class="select__option" value="hogar">Hogar</option>
+                        <option class="select__option" value="mascotas">Mascotas</option>
+                        <option class="select__option" value="electronica">Electronica</option>
+                        <option class="select__option" value="alimentos">Alimentos</option>
+                        <option class="select__option" value="aseoPersonal">Aseo Personal</option>
+                        <option class="select__option" value="juguetes">Juguetes</option>
+                        <option class="select__option" value="ropa">Ropa</option>
+                    </select>
+                    <button class="formulario__boton" type="submit" id="btnAgregar">Agregar</button>
+                </form>
+            </div>
+            <div class="main__contenedorx">
+                <h2 class="main__title">Dashboard</h2>
+                <p class="main__paragraph">Total de productos: <span class="main__span" id="">0</span></p>
+                <p class="main__paragraph">Total de categorías: <span class="main__span" id="">0</span></p>
+                <p class="main__paragraph">Productos con bajo stock: <span class="main__span" id="">0</span></p>
+                <p class="main__paragraph">Valor total del inventario: <span class="main__span" id="">0</span></p>
+            </div>
+            <div class="main__tablex">
+                <table class="main__tabla">
+                    <thead class="thead__head">
+                        <tr class="thead__row">
+                            <th class="thead__column">Nombre</th>
+                            <th class="thead__column">Cantidad en Stock</th>
+                            <th class="thead__column">Categoría</th>
+                            <th class="thead__column">Precio Unitario</th>
+                            <th class="thead__column">Subtotal</th>
+                            <th class="thead__column">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody__body" id="tbody"></tbody>
+                    <tfoot class="tfoot">
+                        <tr class="tfoot__row">
+                            <td class="tfoot__column--text" colspan="4">Subtotal General:</td>
+                            <td class="tfoot__column"><span id="subtotalgeneral">0</span></td>
+                        </tr>
+                        <tr class="tfoot__row">
+                            <td class="tfoot__column--text" colspan="4">Iva(16%):</td>
+                            <td class="tfoot__column"><span id="iva">0</span></td>
+                        </tr>
+                        <tr class="tfoot__row">
+                            <td class="tfoot__column--text" colspan="4">total:</td>
+                            <td class="tfoot__column"><span id="total">0</span></td>
+                        </tr>
+                        <tr class="tfoot__row">
+                            <td class="tfoot__column--text" colspan="4">Valor Total del inventario:</td>
+                            <td class="tfoot__column"><span id="valorInventario">0</span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
 </body>
 <script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="assets/js/app.js"></script>
 
 </html>

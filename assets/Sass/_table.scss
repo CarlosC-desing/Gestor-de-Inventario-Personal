@@ -1,5 +1,18 @@
 .main {
-    &__table {
-        color: black !important;
+    &__tabla {
+        width: 100%;
+    }
+}
+.tbody {
+    &__column {
+        text-align: center;
+    }
+}
+.tfoot {
+    &__column {
+        text-align: center;
+        &--text {
+            text-align: end;
+        }
     }
 }

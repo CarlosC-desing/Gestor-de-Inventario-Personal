@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'header';
 @use 'formulario';
+@use 'table';
 
 body {
     margin: 0;
@@ -12,6 +13,8 @@ body {
 }
 
 .main {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     
     grid-template-columns: repeat(6, 1fr);
@@ -43,6 +46,8 @@ body {
         grid-area: tabla;
         padding: variables.$padding-general;
         border-radius: 5px;
+        display: flex;
+        justify-content: center;
     }
 }
 

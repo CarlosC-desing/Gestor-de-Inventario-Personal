@@ -1,5 +1,7 @@
 @use 'variables';
 .header {
+    max-width: 1200px;
+    margin: 0 auto;
     height: 20vh;
     display: flex;
     align-items: center;
