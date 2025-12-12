@@ -81,17 +81,17 @@ La estructura del proyecto es clara y bien organizada, siguiendo las convencione
 
 ⚙️ Funcionalidades Clave
 
-    1.Agregar Producto: Formulario validado para añadir nuevos productos al inventario.
+    1. Agregar Producto: Formulario validado para añadir nuevos productos al inventario.
 
-    2.Almacenamiento Local: Los datos del inventario se guardan en el localStorage para persistir entre sesiones.
+    2. Almacenamiento Local: Los datos del inventario se guardan en el localStorage para persistir entre sesiones.
 
-    3.Visualización de Inventario: Una tabla dinámica muestra todos los productos con sus detalles.
+    3. Visualización de Inventario: Una tabla dinámica muestra todos los productos con sus detalles.
 
-    4.Cálculos Automáticos: Cálculo de subtotal por producto, subtotal general, IVA (16%) y valor total del inventario.
+    4. Cálculos Automáticos: Cálculo de subtotal por producto, subtotal general, IVA (16%) y valor total del inventario.
 
-    5.Edición y Eliminación: Botones para editar y eliminar productos individualmente de la tabla.
+    5. Edición y Eliminación: Botones para editar y eliminar productos individualmente de la tabla.
 
-    6.Dashboard: Secciones para mostrar contadores importantes (total de productos, categorías, bajo stock, valor total).
+    6. Dashboard: Secciones para mostrar contadores importantes (total de productos, categorías, bajo stock, valor total).
     
 🚀 Uso Local
 
