@@ -1,7 +1,8 @@
 📦 Gestor de Inventario Personal
 
 🌟 Descripción General del Proyecto
-Este proyecto es un Gestor de Inventario Personal diseñado para ayudar a los usuarios a llevar un control de sus productos, stock, precios y valor total del inventario. La aplicación se centra en una interfaz de usuario clara y responsive, y está construida utilizando tecnologías web modernas con un enfoque en la modularidad y el mantenimiento del código.
+
+    Este proyecto es un Gestor de Inventario Personal diseñado para ayudar a los usuarios a llevar un control de sus productos, stock, precios y valor total del inventario. La aplicación se     centra en una interfaz de usuario clara y responsive, y está construida utilizando tecnologías web modernas con un enfoque en la modularidad y el mantenimiento del código.
 
 🛠️ Tecnologías Utilizadas
 
