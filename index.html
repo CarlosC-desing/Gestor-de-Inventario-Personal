@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de inventario Personal</title>
-    <link rel="icon" href="assets/img/logo.png" type="img/png">
+    <link rel="icon" href="assets/img/Logo.png" type="img/png">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +17,17 @@
 <body>
     <div class="container__body--all">
         <header class="header">
-            <!-- <a href="index.html"> -->
-            <img class="header__brand" src="assets/img/Invento_logo.png" alt="Invento Labs logo">
-            <!-- </a> -->
-            <input class="header__input" type="text" name="buscador" id="buscador" placeholder="🔎 Buscar Producto...">
+            <img class="header__brand" src="assets/img/Logo_Invento_Labs.png" alt="Invento Labs logo">
+
+            <div class="header__search">
+                <svg class="header__search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <input class="header__search-input" type="text" placeholder="Buscar...">
+            </div>
         </header>
         <main class="main">
             <div class="main__formulariox">
@@ -50,11 +57,24 @@
                 </form>
             </div>
             <div class="main__contenedorx">
-                <h2 class="main__title">Dashboard</h2>
-                <p class="main__paragraph">Total de productos: <span class="main__span" id="">0</span></p>
-                <p class="main__paragraph">Total de categorías: <span class="main__span" id="">0</span></p>
-                <p class="main__paragraph">Productos con bajo stock: <span class="main__span" id="">0</span></p>
-                <p class="main__paragraph">Valor total del inventario: <span class="main__span" id="">0</span></p>
+                <div class="content-cards">
+                    <div class="productos">
+                        <p class="main__paragraph">Total de productos</p>
+                        <span class="main__span" id="totalProductos">0</span>
+                    </div>
+                    <div class="categorias">
+                        <p class="main__paragraph">Total de categorías</p>
+                        <span class="main__span" id="totalCategorias">0</span>
+                    </div>
+                    <div class="stock">
+                        <p class="main__paragraph">Productos con bajo stock</p>
+                        <span class="main__span" id="totalBajoStock">0</span>
+                    </div>
+                    <div class="inventario">
+                        <p class="main__paragraph">Valor del inventario</p>
+                        <span class="main__span" id="totalInventario">0</span>
+                    </div>
+                </div>
             </div>
             <div class="main__tablex">
                 <table class="main__tabla">
@@ -88,6 +108,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                <button class="tabla__boton" id="vaciarInventario">Vaciar inventario</button>
             </div>
         </main>
         <footer class="footer"></footer>

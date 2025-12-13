@@ -30,7 +30,7 @@ function renderizarTabla(contenedor, lista) {
 function actualizarContadores() {
     const IVA = 0.16;
     let lista = obtenerLista();
-    const subtotalGeneral = lista.reduce((acumulador, productoSubtotal)=> {
+    const subtotalGeneral = lista.reduce((acumulador, productoSubtotal) => {
         return acumulador + productoSubtotal.subtotal;
     }, 0);
     const ivaGeneral = subtotalGeneral * IVA;
@@ -41,10 +41,21 @@ function actualizarContadores() {
     $("#total").text(totalGeneral.toFixed(2));
     $("#valorInventario").text(subtotalGeneral.toFixed(2));
 }
+function actualizarTotales() {
+    let lista = obtenerLista();
+    const totalProductos = lista.length;
+    const valorInventario = lista.reduce((precio, productos) => {
+        return precio + productos.subtotal;
+    }, 0);
+
+    $("#totalProductos").text(totalProductos);
+    $("#totalInventario").text(`${Math.floor(valorInventario)} $`);
+}
 $(document).ready(() => {
     let lista = obtenerLista();
     renderizarTabla($("#tbody"), lista);
     actualizarContadores();
+    actualizarTotales();
 
     $("#btnAgregar").on("click", function (e) {
         e.preventDefault();
@@ -61,7 +72,8 @@ $(document).ready(() => {
             let lista = obtenerLista();
             renderizarTabla($("#tbody"), lista);
             actualizarContadores();
-            formulario[0].reset();
+            actualizarTotales();
+            /* formulario[0].reset(); */
             Swal.fire("Producto Agregado", "", "success");
         } else {
             Swal.fire("Debe marcar una categoría", "", "error");
@@ -83,6 +95,7 @@ $(document).ready(() => {
                 actualizarLista(lista);
                 renderizarTabla($("#tbody"), lista);
                 actualizarContadores();
+                actualizarTotales();
                 Swal.fire("Producto eliminado", "", "success");
             } else {
                 Swal.fire("Acción cancelada", "", "error");
@@ -95,7 +108,7 @@ $(document).ready(() => {
             icon: "warning",
             showCancelButton: true,
             confirmButtonText: "Editar",
-            cancelButtonText: "Eliminar"
+            cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
                 let index = $(this).data("index");
@@ -112,10 +125,29 @@ $(document).ready(() => {
                     actualizarLista(lista);
                     renderizarTabla($("#tbody"), lista);
                     actualizarContadores();
+                    actualizarTotales();
                 }
                 Swal.fire("Producto editado", "", "success");
             } else {
                 Swal.fire("Edición cancelada", "", "error");
+            }
+        });
+    });
+    $("#vaciarInventario").on("click", function () {
+        Swal.fire({
+            title: "¿Desea vaciar el inventario?",
+            text: "esta opción no se puede deshacer",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem("lista");
+                renderizarTabla($("#tbody"), []);
+                actualizarContadores();
+                actualizarTotales();
+                Swal.fire("Inventario vaciado", "", "success");
             }
         });
     });

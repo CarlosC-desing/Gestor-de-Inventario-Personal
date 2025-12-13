@@ -1,4 +1,5 @@
 @use 'variables';
+@use "sass:map";
 @use 'header';
 @use 'formulario';
 @use 'table';
@@ -6,48 +7,164 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    background-color: rgb(20, 20, 20);
+    background-image: url("https://www.publicdomainpictures.net/pictures/190000/velka/black-background-1468370534d5s.jpg");
+    /* background-image: url(../img/Fondo1.webp);*/
+    /* background-image: url("https://i.pinimg.com/736x/e8/7b/f4/e87bf42813ffd2c4b8a9d7e1202a063b.jpg"); */
+    background-size: cover;
     padding: 0.5rem 2rem;
-    color: whitesmoke;
+    color: map-get(variables.$paleta_1, whitex);
     font-family: variables.$font-principal;
 }
 
-.main {
-    max-width: 1200px;
+.container__body--all {
     margin: 0 auto;
+    max-width: 1200px;
+}
+
+.main {
     display: grid;
-    
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto 1fr;
-    
-    grid-template-areas: 
-    "formulario formulario contenedor contenedor contenedor contenedor"
-    "tabla tabla tabla tabla tabla tabla";
-    
+    grid-template-areas:
+        "formulario formulario contenedor contenedor contenedor contenedor"
+        "tabla tabla tabla tabla tabla tabla";
     gap: 1.5rem;
     padding-top: 1.5rem;
+    height: calc(100vh - 10vh);
 
     &__formulariox {
-        background-color: variables.$fondo;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
+        /* background-color: variables.$fondo; */
         grid-area: formulario;
         padding: variables.$padding-general;
         border-radius: 5px;
     }
-    
+
     &__contenedorx {
-        background-color: variables.$fondo;
+        /* backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.082); */
         grid-area: contenedor;
-        padding: variables.$padding-general;
+        /* padding: variables.$padding-general; */
         border-radius: 5px;
     }
-    
+
+    &__title {
+        background: linear-gradient(to right, #f83302, #4a8aff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+
     &__tablex {
-        background-color: variables.$fondo;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
         grid-area: tabla;
         padding: variables.$padding-general;
         border-radius: 5px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+    }
+
+    .main__contenedorx {
+        /* backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.082); */
+        grid-area: contenedor;
+        border-radius: 5px;
+        height: 100%;
+    }
+
+    .main__title {
+        text-align: center;
+        font-size: 60px;
+        margin: 1rem 0;
+    }
+
+    .content-cards {
+        height: 100%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "productos categorias"
+            "stock inventario";
+    }
+
+    .productos {
+        grid-area: productos;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-radius: 5px;
+        color: rgb(121, 66, 175);
+    }
+
+    .categorias {
+        grid-area: categorias;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-radius: 5px;
+        color: rgb(43, 138, 138);
+    }
+
+    .stock {
+        grid-area: stock;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-radius: 5px;
+        color: orangered;
+    }
+
+    .inventario {
+        grid-area: inventario;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-radius: 5px;
+        color: rgb(243, 5, 44);
+    }
+
+    .main__paragraph {
+        background: linear-gradient(to right, map-get(variables.$paleta_3, acentos), map-get(variables.$paleta_2, secundario));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+        margin: 10px 0;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .main__span {
+        font-size: 60px;
+        font-weight: 700;
+        border: solid;
+        padding: 1rem;
+        border-radius: 20px;
     }
 }
 
@@ -55,14 +172,25 @@ body {
     .main {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
-        
+
         grid-template-areas:
             "formulario"
             "contenedor"
             "tabla";
     }
-    
+
     body {
         padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    body {
+        padding: 0.5rem 1rem;
+    }
+
+    .container__body--all {
+        margin: 0 auto;
+        max-width: 1200px;
     }
 }

@@ -1,4 +1,5 @@
 @use 'variables';
+@use "sass:map";
 
 .main__formulario {
     display: flex;
@@ -7,46 +8,68 @@
 
 .formulario {
     &__title {
-        color: variables.$primario;
+        background: linear-gradient(to right, map-get(variables.$paleta_3, texto), map-get(variables.$paleta_1, principal));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+        text-align: center;
+        font-size: 35px;
     }
+
     &__label {
-        color: variables.$primario;
+        font-weight: 700;
+        color: map-get(variables.$paleta_3, texto);
     }
 
     &__input {
-        height: 35px;
+        height: 25px;
         margin-top: 5px;
         margin-bottom: 20px;
+        background: transparent;
+        border: 1px solid map.get(variables.$paleta_3, primario);
+        border-radius: 5px;
+        padding-left: 10px;
+        color: whitesmoke;
+        font-weight: 700;
+        transition: all 0.3s ease;
 
-        &:focus {
-            border-color: variables.$primario;
-            outline: none;
-            box-shadow:
-                0 0 5px rgba(1, 5, 209, 0.733), 0 0 10px #2697f1;
+        &:focus-within {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
         }
     }
 
     &__select {
-        height: 35px;
+        height: 30px;
         margin-top: 5px;
         margin-bottom: 20px;
-
-        &:focus {
-            border-color: variables.$primario;
-            outline: none;
-            box-shadow:
-                0 0 5px rgba(1, 5, 209, 0.733), 0 0 10px #2697f1;
+        background: transparent;
+        border: 1px solid map.get(variables.$paleta_3, primario);
+        border-radius: 5px;
+        padding-left: 10px;
+        color: whitesmoke;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        
+        &:focus-within {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
         }
     }
 
     &__boton {
         height: 35px;
         width: 50%;
-        background: linear-gradient(variables.$primario, blue);
+        background: linear-gradient(to right, map-get(variables.$paleta_3, texto), map-get(variables.$paleta_1, principal));
         border-style: none;
         border-radius: 5px;
         color: whitesmoke;
         font-weight: 700;
         align-self: center;
+        cursor: pointer;
     }
 }
+.select__option {
+        background-color: #2D3436;
+    }

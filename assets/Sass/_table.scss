@@ -3,16 +3,50 @@
         width: 100%;
     }
 }
+
+.thead {
+    &__row {
+        background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+    }
+}
+
 .tbody {
     &__column {
         text-align: center;
     }
 }
+
 .tfoot {
     &__column {
         text-align: center;
+
         &--text {
+            background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
             text-align: end;
         }
     }
+}
+
+.editarproducto {
+    background: linear-gradient(to right, #86a8e7, #ff7e5f);
+    border-style: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.eliminarproducto {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-style: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 700;
 }

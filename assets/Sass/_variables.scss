@@ -1,6 +1,23 @@
-$fondo-body: #1a1b28;
-$fondo: #282934;
-$primario: #2697f1;
-$gris: #61606a;
+$paleta_1: (
+    principal:#FF8C61,
+    secundario:#5D83B1,
+    acentos:#8C72B0,
+    whitex:#F8F9FA,
+    texto:#2D3436,
+);
+$paleta_2: (
+    fondo: #0F172A,
+    tarjeta: rgba(255, 255, 255, 0.05),
+    primario: #FFAD87,
+    secundario: #74B9FF,
+    texto: #E2E8F0,
+);
+$paleta_3: (
+    primario: #FC7643,
+    secundario: #D1DCEB,
+    acentos: #4834D4,
+    fondo: #26DE81,
+    texto: #EB4D4B,
+);
 $padding-general: 0.5rem 1rem;
 $font-principal: "Roboto";
