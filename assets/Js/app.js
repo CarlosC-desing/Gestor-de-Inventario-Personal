@@ -65,13 +65,19 @@ $(document).ready(() => {
     $("#btnAgregar").on("click", function (e) {
         e.preventDefault();
         const formulario = $("#formulario");
-        const nombre = $("#nombre").val();
+        const nombre = $("#nombre").val().trim();
         const cantidad = parseInt($("#cantidadStock").val());
         const precio = parseFloat($("#precioUnitario").val());
         const categoria = $("#categoria").val();
         const subtotal = cantidad * precio;
 
-        if (categoria !== "todas") {
+        if (categoria === "categorias") {
+            Swal.fire("Debe elegir una categoria", "", "error");
+            return;
+        } else if (nombre === "" || isNaN(cantidad) || isNaN(precio)) {
+            Swal.fire("Complete todos los campos correctamente", "", "error");
+            return;
+        } else {
             let producto = { nombre: nombre, cantidad: cantidad, precio: precio, categoria: categoria, subtotal: subtotal }
             agregarALaLista(producto);
             let lista = obtenerLista();
@@ -80,9 +86,6 @@ $(document).ready(() => {
             actualizarTotales();
             formulario[0].reset();
             Swal.fire("Producto Agregado", "", "success");
-        } else {
-            Swal.fire("Debe marcar una categoría", "", "error");
-            return;
         }
     });
     $("#tbody").on("click", ".eliminarproducto", function () {

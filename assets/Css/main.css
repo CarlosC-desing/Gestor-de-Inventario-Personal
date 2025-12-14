@@ -4,8 +4,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
-  gap: 100px;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   height: 10vh;
@@ -44,6 +43,34 @@
 }
 .header__search-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
+}
+.header__options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 5px 15px;
+  width: 200px;
+  transition: background 0.3s ease-in, border-color 0.3s ease-in;
+}
+.header__options:hover {
+  cursor: pointer;
+  background: #EB4D4B;
+}
+.header__option-gear {
+  width: 18px;
+  height: 18px;
+}
+
+.boton-general, .tablex__boton {
+  height: 35px;
+  background: linear-gradient(to right, #EB4D4B, #FF8C61);
+  border-style: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .main__formulario {
@@ -215,6 +242,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
 }
 .main .main__contenedorx {
   /* backdrop-filter: blur(10px);
@@ -303,6 +331,12 @@ body {
   border-radius: 20px;
 }
 
+.tablex__options {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;

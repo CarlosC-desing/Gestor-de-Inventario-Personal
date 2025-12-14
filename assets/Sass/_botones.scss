@@ -1,0 +1,10 @@
+@use 'variables';
+.boton-general {
+    height: 35px;
+    background: linear-gradient(to right, map-get(variables.$paleta_3, texto), map-get(variables.$paleta_1, principal));
+    border-style: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 700;
+    cursor: pointer;
+}

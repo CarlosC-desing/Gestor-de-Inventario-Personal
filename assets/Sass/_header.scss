@@ -7,8 +7,7 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    gap: 100px;
+    justify-content: space-between;
     padding: variables.$padding-general;
     border-radius: 5px;
     height: 10vh;
@@ -52,5 +51,24 @@
         &::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
+    }
+    &__options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 20px;
+        padding: 5px 15px;
+        width: 200px;
+        transition: background 0.3s ease-in, border-color 0.3s ease-in;
+
+        &:hover {
+            cursor: pointer;
+            background: map-get(variables.$paleta_3, texto);
+        }
+    }
+    &__option-gear {
+        width: 18px;
+        height: 18px;
     }
 }
