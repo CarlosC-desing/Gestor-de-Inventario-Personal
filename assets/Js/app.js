@@ -47,9 +47,14 @@ function actualizarTotales() {
     const valorInventario = lista.reduce((precio, productos) => {
         return precio + productos.subtotal;
     }, 0);
+    const stockBajo = lista.filter(p => p.cantidad <= 5).length;
+    const cantidadOptions = $("#categoria option").length;
 
     $("#totalProductos").text(totalProductos);
     $("#totalInventario").text(`${Math.floor(valorInventario)} $`);
+    $("#totalBajoStock").text(stockBajo);
+    $("#totalCategorias").text(cantidadOptions);
+    
 }
 $(document).ready(() => {
     let lista = obtenerLista();
