@@ -78,7 +78,7 @@ $(document).ready(() => {
             renderizarTabla($("#tbody"), lista);
             actualizarContadores();
             actualizarTotales();
-            /* formulario[0].reset(); */
+            formulario[0].reset();
             Swal.fire("Producto Agregado", "", "success");
         } else {
             Swal.fire("Debe marcar una categoría", "", "error");
