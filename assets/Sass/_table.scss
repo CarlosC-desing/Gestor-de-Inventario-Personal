@@ -1,6 +1,11 @@
+@use 'variables';
 .main {
     &__tabla {
         width: 100%;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.001);
+        border-radius: 10px;
+        padding: variables.$padding-general;
     }
 }
 
@@ -15,8 +20,19 @@
 }
 
 .tbody {
+    &__row {
+        height: 50px;
+        padding: 10px 0;
+    }
     &__column {
         text-align: center;
+        &--options {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
@@ -36,17 +52,21 @@
 }
 
 .editarproducto {
-    background: linear-gradient(to right, #86a8e7, #ff7e5f);
+    background: linear-gradient(to right, map-get(variables.$paleta_3, texto), map-get(variables.$paleta_1, principal));
     border-style: none;
+    height: 20px;
     border-radius: 5px;
     color: whitesmoke;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .eliminarproducto {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, map-get(variables.$paleta_3, texto), map-get(variables.$paleta_1, principal));
     border-style: none;
+    height: 20px;
     border-radius: 5px;
     color: whitesmoke;
     font-weight: 700;
+    cursor: pointer;
 }

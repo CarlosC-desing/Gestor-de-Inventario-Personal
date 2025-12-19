@@ -141,6 +141,10 @@
 
 .main__tabla {
   width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.001);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
 
 .thead__row {
@@ -151,8 +155,19 @@
   font-weight: bold;
 }
 
+.tbody__row {
+  height: 50px;
+  padding: 10px 0;
+}
 .tbody__column {
   text-align: center;
+}
+.tbody__column--options {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .tfoot__column {
@@ -168,19 +183,23 @@
 }
 
 .editarproducto {
-  background: linear-gradient(to right, #86a8e7, #ff7e5f);
+  background: linear-gradient(to right, #EB4D4B, #FF8C61);
   border-style: none;
+  height: 20px;
   border-radius: 5px;
   color: whitesmoke;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .eliminarproducto {
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(to right, #EB4D4B, #FF8C61);
   border-style: none;
+  height: 20px;
   border-radius: 5px;
   color: whitesmoke;
   font-weight: 700;
+  cursor: pointer;
 }
 
 body {
@@ -207,7 +226,7 @@ body {
   grid-template-areas: "formulario formulario contenedor contenedor contenedor contenedor" "tabla tabla tabla tabla tabla tabla";
   gap: 1.5rem;
   padding-top: 1.5rem;
-  height: 90vh;
+  margin-bottom: 2rem;
 }
 .main__formulariox {
   backdrop-filter: blur(10px);
@@ -336,6 +355,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 1rem 0;
 }
 @media (max-width: 900px) {
   .main {

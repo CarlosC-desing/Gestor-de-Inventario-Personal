@@ -31,7 +31,7 @@ body {
         "tabla tabla tabla tabla tabla tabla";
     gap: 1.5rem;
     padding-top: 1.5rem;
-    height: calc(100vh - 10vh);
+    margin-bottom: 2rem;
 
     &__formulariox {
         backdrop-filter: blur(10px);
@@ -175,6 +175,7 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin: 1rem 0;
     }
     &__boton {
         @extend .boton-general;
